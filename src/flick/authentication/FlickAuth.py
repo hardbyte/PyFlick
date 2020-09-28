@@ -1,18 +1,15 @@
 """
 Authentication Module
 """
-#!/usr/bin/env python
-# encoding: utf-8
 
 import json
 import time
 import requests
-import os
-from definitions import AUTH_FILE_PATH
-from classes.exception_handler.custom import AuthException
-from classes.util.util import Util
 
-util = Util()
+from definitions import AUTH_FILE_PATH
+from flick.exception_handler.custom import AuthException
+from flick import util
+
 
 class FlickAuth(object):
     """
@@ -71,7 +68,7 @@ class FlickAuth(object):
             })
         # A 200OK response will contain the JSON payload.
         response = json.loads(req.text)
-        self.__saveAccessTokenToFile(response);
+        self.__saveAccessTokenToFile(response)
         return response
 
     def getToken(self):

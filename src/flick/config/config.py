@@ -1,13 +1,10 @@
 """
 Configuration Module
 """
-#!/usr/bin/env python
-# encoding: utf-8
 
 from definitions import CONFIG_PATH
-from classes.util.util import Util
+from flick import util
 
-util = Util()
 
 class Config(object):
     """
